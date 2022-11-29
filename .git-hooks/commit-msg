@@ -1,0 +1,3 @@
+#!/bin/sh
+
+./node_modules/git-conventional-commits/cli.js commit-msg-hook "$1"

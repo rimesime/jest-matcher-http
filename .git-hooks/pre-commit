@@ -1,0 +1,4 @@
+#!/bin/sh
+
+.git-hooks/pre-commit-eslint
+.git-hooks/pre-commit-test-unit
