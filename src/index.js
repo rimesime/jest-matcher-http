@@ -1,9 +1,8 @@
 'use strict';
 
 const { expect } = require('@jest/globals');
-const { toReturnHttpCode, toReturnHttpHeader } = require('./matchers');
+const matchers = require('./matchers');
 
-expect.extend({
-  toReturnHttpCode,
-  toReturnHttpHeader,
-});
+expect.extend(matchers);
+
+module.exports = matchers;

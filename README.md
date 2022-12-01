@@ -10,11 +10,20 @@ With npm:
 $ npm install --save-dev jest-matcher-http
 ```
 
-Add this package to your `jest.config.js`:
+## Configuration
 
-```json
-setupFilesAfterEnv: ['jest-matcher-http'],
-```
+Either, or:
+* Via configuration - Add this package to your `jest.config.js`:
+    ```json
+    setupFilesAfterEnv: ['jest-matcher-http'],
+    ```
+
+* Or, if you need fine-grained control, load specific matchers in your test file:
+    ```javascript
+    const { toReturnHttpCode } = require('jest-matcher-http');
+
+    expect.extend({ toReturnHttpCode });
+    ```
 
 ## Usage
 
