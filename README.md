@@ -1,8 +1,20 @@
-# jest-matcher-http
+<h1 align="center" style="border-bottom: none;">jest-matcher-http</h1>
+<h3 align="center">Extension for <a href="https://facebook.github.io/jest">Jest</a> providing http-related matchers.</h3>
+<p align="center">
+  <a href="https://www.npmjs.com/package/jest-matcher-http">
+    <img alt="npm latest version" src="https://img.shields.io/npm/v/jest-matcher-http/latest.svg">
+  </a>
+  <a href="https://github.com/rimesime/jest-matcher-http/actions?query=workflow%3ATest+branch%3Amain">
+    <img alt="Build states" src="https://github.com/semantic-release/semantic-release/workflows/Test/badge.svg">
+  </a>
+  <a href="#badge">
+    <img alt="semantic-release: angular" src="https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release">
+  </a>
+</p>
 
-This is a simple matcher for [Jest](https://facebook.github.io/jest) that provides http-related matchers.
 
-## Installation
+
+# Installation
 
 With npm:
 
@@ -10,7 +22,7 @@ With npm:
 $ npm install --save-dev jest-matcher-http
 ```
 
-## Configuration
+# Configuration
 
 Either, or:
 * Via configuration - Add this package to your `jest.config.js`:
@@ -25,7 +37,7 @@ Either, or:
     expect.extend({ toReturnHttpCode });
     ```
 
-## Usage
+# Usage
 
 ```javascript
 const supertest = require('supertest');
@@ -50,7 +62,7 @@ describe('Example', () => {
 });
 ```
 
-## Cloning & Working with the Repository
+# Cloning & Working with the Repository
 
 1. Run
     ```shell
@@ -62,6 +74,6 @@ describe('Example', () => {
     $ git config core.hooksPath .git-hooks
     ```
 
-## License
+# License
 
 This is free software, distributed under the [ISC license](https://opensource.org/licenses/ISC).
