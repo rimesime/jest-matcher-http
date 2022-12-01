@@ -1,34 +1,31 @@
-# Description
-Jest Expect Matcher for HTTP requests.
+# jest-matcher-http
 
-# Setup
+This is a simple matcher for [Jest](https://facebook.github.io/jest) that provides http-related matchers.
 
-Install the package:
+## Installation
 
-``npm install --save-dev jest-matcher-http``
+With npm:
+
+```shell
+$ npm install --save-dev jest-matcher-http
+```
 
 Add this package to your `jest.config.js`:
 
 ```json
-  // The path to a module that runs some
-  // code to configure or set up the testing
-  // framework before each test
-  setupFilesAfterEnv: ['jest-matcher-http'],
+setupFilesAfterEnv: ['jest-matcher-http'],
 ```
 
-# Usage
+## Usage
 
 ```javascript
-const superagentDefaults = require('superagent-defaults');
 const supertest = require('supertest');
-const request = superagentDefaults(
-  supertest('www.the-host.com'),
-);
+const request = supertest('www.the-host.com');
 
 describe('Example', () => {
     it('should accept empty object', async () => {
       const response = await request
-        .post('/v1/messages')
+        .post('/v1/objects')
         .send({});
 
       expect(response).toReturnHttpCode(200);
@@ -44,8 +41,18 @@ describe('Example', () => {
 });
 ```
 
-# Working with the Repository
+## Cloning & Working with the Repository
 
-This repository uses conventional commits that are validated using `git-conventional-commits`. To validate this automatically, git-hooks need to be enabled manually after cloning this repository:
+1. Run
+    ```shell
+    $ npm install
+    ```
 
-``git config core.hooksPath .git-hooks``
+1. This repository uses conventional commits that are validated using `git-conventional-commits`. To validate this automatically, git-hooks need to be enabled manually after cloning this repository:
+    ```shell
+    $ git config core.hooksPath .git-hooks
+    ```
+
+## License
+
+This is free software, distributed under the [ISC license](https://opensource.org/licenses/ISC).
