@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest --coverage --config jest.unit.config.js",
+    "acp": "git add . && npm run commit && git push",
     "commit": "git-cz",
     "semantic-release": "semantic-release --branches main"
   },
