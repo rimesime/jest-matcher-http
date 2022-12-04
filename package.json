@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest --coverage --config jest.unit.config.js",
+    "commit": "git-cz",
     "semantic-release": "semantic-release --branches main"
   },
   "repository": {
@@ -28,6 +29,8 @@
     ]
   },
   "devDependencies": {
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.28.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -38,5 +41,10 @@
   },
   "dependencies": {
     "@jest/globals": "^29.3.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
