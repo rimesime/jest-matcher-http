@@ -13,8 +13,12 @@
 </p>
 
 
+Jest [matchers](https://jestjs.io/docs/using-matchers) (`toReturnHttpStatus`, `toReturnHttpHeader`) to [expect](https://jestjs.io/docs/expect) http responses.
 
-# Installation
+Logs received body and headers if response is not as expected.
+
+
+# Installation & Configuration
 
 With npm:
 
@@ -22,11 +26,9 @@ With npm:
 $ npm install --save-dev jest-matcher-http
 ```
 
-# Configuration
-
 Either, or:
 * Via configuration - Add this package to your `jest.config.js`:
-    ```json
+    ```
     setupFilesAfterEnv: ['jest-matcher-http'],
     ```
 
@@ -39,6 +41,29 @@ Either, or:
 
 # Usage
 
+```javascript
+expect(response).toReturnHttpStatus(307);
+expect(response).toReturnHttpHeader('Location', '/v1/new-path');
+```
+
+## Log Output Example
+```bash
+expected http status code 500 to equal 307
+
+    server responded with body:
+    {
+      "requestId": "<uuid>",
+      "message": "Some helpful information."
+    }
+
+    server responded with headers:
+    {
+      "content-type": "application/json",
+      ...
+    }
+```
+
+## Extended Example
 ```javascript
 const supertest = require('supertest');
 const request = supertest('www.the-host.com');
@@ -62,16 +87,31 @@ describe('Example', () => {
 });
 ```
 
-# Cloning & Working with the Repository
+# Contributing
 
-1. Run
+1. Clone the repository:
     ```shell
-    $ npm install
+    $ git clone git@github.com:rimesime/jest-matcher-http.git
     ```
 
 1. This repository uses conventional commits that are validated using `git-conventional-commits`. To validate this automatically, git-hooks need to be enabled manually after cloning this repository:
     ```shell
     $ git config core.hooksPath .git-hooks
+    ```
+
+1. Install dependencies:
+    ```shell
+    $ npm ci
+    ```
+
+1. Test:
+    ```shell
+    $ npm test
+    ```
+
+1. Commit (using commitizen for semantic releases):
+    ```shell
+    $ npm run commit
     ```
 
 # License
