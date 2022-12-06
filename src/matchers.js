@@ -10,7 +10,8 @@
  * @see {@link https://jestjs.io/docs/expect#expectextendmatchers}
  */
 function toReturnHttpCode(response, expectedHttpStatusCode) {
-  const { status, body, headers } = response;
+  const body = response.body ?? response.data;
+  const { status, headers } = response;
 
   const pass = status === expectedHttpStatusCode;
 
@@ -37,7 +38,8 @@ function toReturnHttpCode(response, expectedHttpStatusCode) {
  * @see {@link https://jestjs.io/docs/expect#expectextendmatchers}
  */
 function toReturnHttpHeader(response, headerField, headerValue) {
-  const { body, headers } = response;
+  const body = response.body ?? response.data;
+  const { headers } = response;
   const headerFieldLowerCase = headerField.toLowerCase();
 
   const pass = headers[headerFieldLowerCase] === headerValue;
