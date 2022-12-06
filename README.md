@@ -19,6 +19,7 @@ Logs received body and headers if response is not as expected.
 
 Supported http libraries:
 - [superagent](https://www.npmjs.com/package/superagent)/[supertest](https://www.npmjs.com/package/supertest)
+- [axios](https://www.npmjs.com/package/axios)
 - (more to come)
 
 # Installation & Configuration
