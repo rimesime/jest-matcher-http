@@ -4,12 +4,12 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      commit-message:
-        prefix: "fix"
+    commit-message:
+      prefix: "fix"
 
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
-      commit-message:
-        prefix: "fix"
+    commit-message:
+      prefix: "fix"
