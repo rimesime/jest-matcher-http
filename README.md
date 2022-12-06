@@ -17,6 +17,9 @@ Jest [matchers](https://jestjs.io/docs/using-matchers) (`toReturnHttpStatus`, `t
 
 Logs received body and headers if response is not as expected.
 
+Supported http libraries:
+- [superagent](https://www.npmjs.com/package/superagent)/[supertest](https://www.npmjs.com/package/supertest)
+- (more to come)
 
 # Installation & Configuration
 
