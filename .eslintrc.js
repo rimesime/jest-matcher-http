@@ -80,5 +80,11 @@ module.exports = {
     'jest/valid-title': 'error',
     quotes: [2, 'single', { avoidEscape: true }],
     'comma-dangle': [2, 'always-multiline'],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['integration_tests/**'],
+      },
+    ],
   },
 };

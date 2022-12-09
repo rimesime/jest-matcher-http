@@ -1,36 +1,17 @@
 'use strict';
 
-const express = require('express');
-const http = require('http');
 const axios = require('axios');
 
+const { runAgainstServer, staticVariables } = require('./localServer.int.helper');
+
 describe('axios', () => {
-  let server;
-  let url;
-
-  const body = { name: 'john' };
-  const headerName = 'Some';
-  const headerValue = 'Header';
-
   let response;
+  const { body, headerName, headerValue } = staticVariables;
 
-  // eslint-disable-next-line jest/no-done-callback
-  beforeAll((done) => {
-    // eslint-disable-next-line new-cap
-    const app = new express();
-    app.get('/', (req, res) => {
-      res
-        .status(200)
-        .set(headerName, headerValue)
-        .json(body);
-    });
-
-    server = http.createServer(app);
-    const listener = server.listen(async () => {
-      url = `http://localhost:${listener.address().port}`;
+  beforeAll(async () => {
+    await runAgainstServer(async (url) => {
       const request = axios.create({ baseURL: url });
-      response = await request.get(`${url}/`);
-      server.close(done);
+      response = await request.get('/');
     });
   });
 
