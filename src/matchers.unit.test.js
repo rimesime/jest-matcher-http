@@ -2,7 +2,7 @@
 
 describe('matchers', () => {
   describe('toReturnHttpCode', () => {
-    it('should succeed if http code is as expected', async () => {
+    it('should succeed if http code is as expected - status', async () => {
       const response = {
         status: 200,
         body: {},
@@ -10,6 +10,16 @@ describe('matchers', () => {
       };
 
       expect(response).toReturnHttpCode(response.status);
+    });
+
+    it('should succeed if http code is as expected - statusCode', async () => {
+      const response = {
+        statusCode: 200,
+        body: {},
+        headers: {},
+      };
+
+      expect(response).toReturnHttpCode(response.statusCode);
     });
 
     it('should succeed if data instead of body provided', async () => {
