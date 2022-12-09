@@ -5,7 +5,7 @@
     <img alt="npm latest version" src="https://img.shields.io/npm/v/jest-matcher-http/latest.svg">
   </a>
   <a href="https://github.com/rimesime/jest-matcher-http/actions?query=workflow%3ATest+branch%3Amain">
-    <img alt="Build states" src="https://github.com/semantic-release/semantic-release/workflows/Test/badge.svg">
+    <img alt="Build states" src="https://github.com/rimesime/jest-matcher-http/workflows/Test/badge.svg">
   </a>
   <a href="#badge">
     <img alt="semantic-release: angular" src="https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release">
