@@ -1,35 +1,16 @@
 'use strict';
 
-const express = require('express');
-const http = require('http');
 const superagent = require('superagent');
 
+const { runAgainstServer, staticVariables } = require('./localServer.int.helper');
+
 describe('superagent', () => {
-  let server;
-  let url;
-
-  const body = { name: 'john' };
-  const headerName = 'Some';
-  const headerValue = 'Header';
-
   let response;
+  const { body, headerName, headerValue } = staticVariables;
 
-  // eslint-disable-next-line jest/no-done-callback
-  beforeAll((done) => {
-    // eslint-disable-next-line new-cap
-    const app = new express();
-    app.get('/', (req, res) => {
-      res
-        .status(200)
-        .set(headerName, headerValue)
-        .json(body);
-    });
-
-    server = http.createServer(app);
-    const listener = server.listen(async () => {
-      url = `http://localhost:${listener.address().port}`;
+  beforeAll(async () => {
+    await runAgainstServer(async (url) => {
       response = await superagent.get(`${url}/`);
-      server.close(done);
     });
   });
 
