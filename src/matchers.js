@@ -11,7 +11,8 @@
  */
 function toReturnHttpCode(response, expectedHttpStatusCode) {
   const body = response.body ?? response.data;
-  const { status, headers } = response;
+  const status = response.status ?? response.statusCode;
+  const { headers } = response;
 
   const pass = status === expectedHttpStatusCode;
 
