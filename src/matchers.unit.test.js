@@ -12,6 +12,16 @@ describe('matchers', () => {
       expect(response).toReturnHttpCode(response.status);
     });
 
+    it('should succeed if data instead of body provided', async () => {
+      const response = {
+        status: 200,
+        data: {},
+        headers: {},
+      };
+
+      expect(response).toReturnHttpCode(response.status);
+    });
+
     it('should fail if http code is not as expected', async () => {
       const response = {
         status: 200,
@@ -43,6 +53,18 @@ describe('matchers', () => {
       const response = {
         status: 200,
         body: {},
+        headers: {
+          'request-id': 'some-uuid',
+        },
+      };
+
+      expect(response).toReturnHttpHeader('request-id', 'some-uuid');
+    });
+
+    it('should succeed if data instead of body provided', async () => {
+      const response = {
+        status: 200,
+        data: {},
         headers: {
           'request-id': 'some-uuid',
         },
