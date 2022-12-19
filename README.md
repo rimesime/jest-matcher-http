@@ -22,6 +22,10 @@ Supported http libraries:
 - [axios](https://www.npmjs.com/package/axios)
 - [needle](https://www.npmjs.com/package/needle)
 
+Supported content types:
+- application/json
+- text/plain
+
 # Installation & Configuration
 
 With npm:
