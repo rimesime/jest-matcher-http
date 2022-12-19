@@ -5,11 +5,11 @@ updates:
     schedule:
       interval: "weekly"
     commit-message:
-      prefix: "fix"
+      prefix: "chore"
 
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
     commit-message:
-      prefix: "fix"
+      prefix: "chore"
