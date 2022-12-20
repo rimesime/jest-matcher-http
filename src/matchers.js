@@ -39,13 +39,10 @@ function toReturnHttpCode(response, expectedHttpStatusCode) {
 
   const pass = status === expectedHttpStatusCode;
 
-  if (pass) {
-    return { pass };
-  }
-
   return {
     pass,
-    message: () => `expected http status code ${status} to equal ${expectedHttpStatusCode}\n\n`
+    message: () => `expected http status code ${status}${pass ? ' not' : ''} `
+      + `to equal ${expectedHttpStatusCode}\n\n`
       + `server responded with body:\n${JSON.stringify(result, null, 2)}\n\n`
       + `server responded with headers:\n${JSON.stringify(headers, null, 2)}`,
   };
@@ -68,13 +65,10 @@ function toReturnHttpHeader(response, headerField, headerValue) {
 
   const pass = headers[headerFieldLowerCase] === headerValue;
 
-  if (pass) {
-    return { pass };
-  }
-
   return {
     pass,
-    message: () => `expected http header "${headerFieldLowerCase}" with value "${headerValue}"\n\n`
+    message: () => `expected http header "${headerFieldLowerCase}"`
+      + `${pass ? ' not' : ''} to have value "${headerValue}"\n\n`
       + `server responded with body:\n${JSON.stringify(result, null, 2)}\n\n`
       + `server responded with headers:\n${JSON.stringify(headers, null, 2)}`,
   };

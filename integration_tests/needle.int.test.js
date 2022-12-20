@@ -67,7 +67,7 @@ describe('needle', () => {
       }
 
       expect(caughtError.message).toContain(
-        `expected http header "${headerName.toLowerCase()}" with value ""\n`
+        `expected http header "${headerName.toLowerCase()}" to have value ""\n`
               + '\n'
               + 'server responded with body:\n'
               + `${JSON.stringify(resultJson, null, 2)}\n`
