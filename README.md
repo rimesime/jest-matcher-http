@@ -7,6 +7,9 @@
   <a href="https://github.com/rimesime/jest-matcher-http/actions?query=workflow%3ATest+branch%3Amain">
     <img alt="Build states" src="https://github.com/rimesime/jest-matcher-http/workflows/Test/badge.svg">
   </a>
+  <a href="https://codecov.io/gh/rimesime/jest-matcher-http" >
+    <img src="https://codecov.io/gh/rimesime/jest-matcher-http/branch/main/graph/badge.svg?token=OY3A3BFOUG"/>
+  </a>
   <a href="#badge">
     <img alt="semantic-release: angular" src="https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release">
   </a>
