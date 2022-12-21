@@ -105,11 +105,6 @@ describe('Example', () => {
     $ git clone git@github.com:rimesime/jest-matcher-http.git
     ```
 
-1. This repository uses conventional commits that are validated using `git-conventional-commits`. To validate this automatically, git-hooks need to be enabled manually after cloning this repository:
-    ```shell
-    $ git config core.hooksPath .git-hooks
-    ```
-
 1. Install dependencies:
     ```shell
     $ npm ci
