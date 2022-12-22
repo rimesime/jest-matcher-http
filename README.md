@@ -100,25 +100,19 @@ describe('Example', () => {
 
 # Contributing
 
-1. Clone the repository:
-    ```shell
-    $ git clone git@github.com:rimesime/jest-matcher-http.git
-    ```
+Thank you for investing time to contribute to this project.
 
-1. Install dependencies:
-    ```shell
-    $ npm ci
-    ```
+Clone the repository:
+  ```shell
+  $ git clone git@github.com:rimesime/jest-matcher-http.git
+  $ npm ci
+  $ npm test
+  ```
 
-1. Test:
-    ```shell
-    $ npm test
-    ```
-
-1. Commit (using commitizen for semantic releases):
-    ```shell
-    $ npm run commit
-    ```
+If you spot a problem, search if an issue already exists. If a 
+related issue doesn't exist, you can open a new issue providing 
+all relevant information to e.g. reproduce the problem or motivate 
+your change. You are welcome to open a PR for any ticket.
 
 # License
 
