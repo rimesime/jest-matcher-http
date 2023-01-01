@@ -5,13 +5,16 @@ module.exports = {
     node: true,
     'jest/globals': true,
   },
+  plugins: [
+    'jest',
+    'jsdoc',
+  ],
   extends: [
     'airbnb-base',
     'plugin:jsdoc/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
   ],
-  plugins: ['jest'],
   overrides: [],
   parserOptions: {
     ecmaVersion: 2020,
