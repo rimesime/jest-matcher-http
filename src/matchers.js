@@ -4,8 +4,7 @@
  * Extract the result from the response.
  *
  * @param {object} response - The response of the request.
- * @returns {object} The result.
- * @throws {Error} If no result could be extracted.
+ * @returns {object} The result. Empty string if no result found.
  */
 function extractResult(response) {
   if (response.data) {
@@ -20,7 +19,7 @@ function extractResult(response) {
     return response.body;
   }
 
-  throw new Error('jest-matcher-http does not support this library');
+  return '';
 }
 
 /**

@@ -7,6 +7,7 @@ const { runAgainstServer, staticVariables } = require('./localServer.int.helper'
 describe('needle', () => {
   let responseJson;
   let responseText;
+  let responsePostNone;
   const {
     resultJson,
     resultText,
@@ -16,14 +17,19 @@ describe('needle', () => {
 
   beforeAll(async () => {
     await runAgainstServer(async (url) => {
-      responseJson = await needle('get', `${url}/json`);
-      responseText = await needle('get', `${url}/text`);
+      responseJson = await needle('get', `${url}/get-json`);
+      responseText = await needle('get', `${url}/get-text`);
+      responsePostNone = await needle('post', `${url}/post-no-response`);
     });
   });
 
   describe('toReturnHttpCode', () => {
     it('should succeed if http code is as expected', async () => {
       expect(responseJson).toReturnHttpCode(200);
+    });
+
+    it('should succeed for empty response on post request', async () => {
+      expect(responsePostNone).toReturnHttpCode(200);
     });
 
     it('should fail if http code is not as expected for application/json responses', async () => {

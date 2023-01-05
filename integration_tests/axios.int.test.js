@@ -7,6 +7,7 @@ const { runAgainstServer, staticVariables } = require('./localServer.int.helper'
 describe('axios', () => {
   let responseJson;
   let responseText;
+  let responsePostNone;
   const {
     resultJson,
     resultText,
@@ -17,14 +18,19 @@ describe('axios', () => {
   beforeAll(async () => {
     await runAgainstServer(async (url) => {
       const request = axios.create({ baseURL: url });
-      responseJson = await request.get('/json');
-      responseText = await request.get('/text');
+      responseJson = await request.get('/get-json');
+      responseText = await request.get('/get-text');
+      responsePostNone = await request.post('/post-no-response');
     });
   });
 
   describe('toReturnHttpCode', () => {
     it('should succeed if http code is as expected', async () => {
       expect(responseJson).toReturnHttpCode(200);
+    });
+
+    it('should succeed for empty response on post request', async () => {
+      expect(responsePostNone).toReturnHttpCode(200);
     });
 
     it('should fail if http code is not as expected for application/json responses', async () => {

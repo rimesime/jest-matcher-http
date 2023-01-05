@@ -102,20 +102,13 @@ describe('matchers', () => {
       );
     });
 
-    it('should throw if result is not supported', async () => {
+    it('should not throw if result is not found', async () => {
       const response = {
         status: 200,
         headers: {},
       };
 
-      let caughtError;
-      try {
-        expect(response).toReturnHttpCode(1);
-      } catch (error) {
-        caughtError = error;
-      }
-
-      expect(caughtError.message).toBe('jest-matcher-http does not support this library');
+      expect(response).toReturnHttpCode(200);
     });
   });
 

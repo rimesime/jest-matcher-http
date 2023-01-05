@@ -1,5 +1,6 @@
 'use strict';
 
+const { expect } = require('@jest/globals');
 const superagent = require('superagent');
 
 const { runAgainstServer, staticVariables } = require('./localServer.int.helper');
@@ -7,6 +8,7 @@ const { runAgainstServer, staticVariables } = require('./localServer.int.helper'
 describe('superagent', () => {
   let responseJson;
   let responseText;
+  let responsePostNone;
   const {
     resultJson,
     resultText,
@@ -16,14 +18,19 @@ describe('superagent', () => {
 
   beforeAll(async () => {
     await runAgainstServer(async (url) => {
-      responseJson = await superagent.get(`${url}/json`);
-      responseText = await superagent.get(`${url}/text`);
+      responseJson = await superagent.get(`${url}/get-json`);
+      responseText = await superagent.get(`${url}/get-text`);
+      responsePostNone = await superagent.post(`${url}/post-no-response`);
     });
   });
 
   describe('toReturnHttpCode', () => {
     it('should succeed if http code is as expected', async () => {
       expect(responseJson).toReturnHttpCode(200);
+    });
+
+    it('should succeed for empty response on post request', async () => {
+      expect(responsePostNone).toReturnHttpCode(200);
     });
 
     it('should fail if http code is not as expected for application/json responses', async () => {
