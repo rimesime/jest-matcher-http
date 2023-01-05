@@ -20,19 +20,24 @@ const headerValue = 'Header';
 async function runAgainstServer(func) {
   // eslint-disable-next-line new-cap
   const app = new express();
-  app.get('/json', (req, res) => {
+  app.get('/get-json', (req, res) => {
     res
       .status(200)
       .set('Content-Type', 'application/json')
       .set(headerName, headerValue)
       .json(resultJson);
   });
-  app.get('/text', (req, res) => {
+  app.get('/get-text', (req, res) => {
     res
       .status(200)
       .set('Content-Type', 'text/plain')
       .set(headerName, headerValue)
       .send(resultText);
+  });
+  app.post('/post-no-response', (req, res) => {
+    res
+      .status(200)
+      .send();
   });
   const server = http.createServer(app);
   const httpTerminator = createHttpTerminator({ server });
