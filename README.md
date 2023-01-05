@@ -16,7 +16,7 @@
 </p>
 
 
-Jest [matchers](https://jestjs.io/docs/using-matchers) (`toReturnHttpStatus`, `toReturnHttpHeader`) to [expect](https://jestjs.io/docs/expect) http responses.
+Jest [matchers](https://jestjs.io/docs/using-matchers) (`toReturnHttpCode`, `toReturnHttpHeader`) to [expect](https://jestjs.io/docs/expect) http responses.
 
 Logs received body and headers if response is not as expected.
 
@@ -37,23 +37,22 @@ With npm:
 $ npm install --save-dev jest-matcher-http
 ```
 
-Either, or:
-* Via configuration - Add this package to your `jest.config.js`:
-    ```
-    setupFilesAfterEnv: ['jest-matcher-http'],
-    ```
+Add this package to your `jest.config.js`:
+```
+setupFilesAfterEnv: ['jest-matcher-http'],
+```
 
-* Or, if you need fine-grained control, load specific matchers in your test file:
-    ```javascript
-    const { toReturnHttpCode } = require('jest-matcher-http');
+Alternatively, if you need fine-grained control, load specific matchers in your test file:
+```javascript
+const { toReturnHttpCode } = require('jest-matcher-http');
 
-    expect.extend({ toReturnHttpCode });
-    ```
+expect.extend({ toReturnHttpCode });
+```
 
 # Usage
 
 ```javascript
-expect(response).toReturnHttpStatus(307);
+expect(response).toReturnHttpCode(307);
 expect(response).toReturnHttpHeader('Location', '/v1/new-path');
 ```
 
@@ -61,7 +60,7 @@ expect(response).toReturnHttpHeader('Location', '/v1/new-path');
 ```bash
 expected http status code 500 to equal 307
 
-    server responded with body:
+    server responded with body:4
     {
       "requestId": "<uuid>",
       "message": "Some helpful information."
@@ -92,7 +91,7 @@ describe('Example', () => {
       const response = await request
         .get('/v1/old-path');
 
-      expect(response).toReturnHttpStatus(307);
+      expect(response).toReturnHttpCode(307);
       expect(response).toReturnHttpHeader('Location', '/v1/new-path');
     })
 });
