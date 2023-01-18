@@ -60,7 +60,7 @@ expect(response).toReturnHttpHeader('Location', '/v1/new-path');
 ```bash
 expected http status code 500 to equal 307
 
-    server responded with body:4
+    server responded with body:
     {
       "requestId": "<uuid>",
       "message": "Some helpful information."
