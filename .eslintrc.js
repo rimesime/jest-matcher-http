@@ -29,7 +29,6 @@ module.exports = {
     'jsdoc/check-alignment': 'error',
     'jsdoc/check-indentation': 'error',
     'jsdoc/empty-tags': 'error',
-    'jsdoc/newline-after-description': 'error',
     'jsdoc/require-description-complete-sentence': [
       'error',
       { abbreviations: ['etc', 'e.g.', 'i.e.'] },
@@ -50,6 +49,7 @@ module.exports = {
     'jsdoc/require-returns-type': 'error',
     'jsdoc/require-returns': 'error',
     'jsdoc/valid-types': 'error',
+    'jsdoc/tag-lines': ['error', 'any', { startLines: 1 }],
     'jest/consistent-test-it': 'error',
     'jest/expect-expect': 'error',
     'jest/prefer-lowercase-title': 'error',
