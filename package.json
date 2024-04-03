@@ -3,6 +3,9 @@
   "version": "0.0.0-development",
   "description": "Additional Jest matchers for HTTP responses.",
   "main": "src/index.js",
+  "engines": {
+    "node": "16.x || 18.x || 20.x"
+  },
   "scripts": {
     "lint": "eslint .",
     "test": "jest --coverage --config jest.unit.config.js",
