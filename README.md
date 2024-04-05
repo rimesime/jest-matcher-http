@@ -37,17 +37,13 @@ With npm:
 $ npm install --save-dev jest-matcher-http
 ```
 
-Add this package to your `jest.config.js`:
+Add this setting to your `jest.config.js`:
 ```
 setupFilesAfterEnv: ['jest-matcher-http'],
 ```
 
-Alternatively, if you need fine-grained control, load specific matchers in your test file:
-```javascript
-const { toReturnHttpCode } = require('jest-matcher-http');
+There's an example typescript project here: [integration_tests/tsProject/](integration_tests/tsProject/). This is used for integration testing this lib to ensure typescript compatibility.
 
-expect.extend({ toReturnHttpCode });
-```
 
 # Usage
 
