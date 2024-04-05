@@ -1,10 +1,20 @@
 'use strict';
 
 /**
+ * @typedef {object} GenericResponse
+ * @property {{ [key: string]: any }} headers - The headers of the response.
+ * @property {object} [data] - The data of the response.
+ * @property {string} [text] - The text of the response.
+ * @property {object} [body] - The body of the response.
+ * @property {number} [status] - The status of the response.
+ * @property {number} [statusCode] - The status of the response.
+ */
+
+/**
  * Extract the result from the response.
  *
- * @param {object} response - The response of the request.
- * @returns {object} The result. Empty string if no result found.
+ * @param {GenericResponse} response - The response of the request.
+ * @returns {object | string} The result. Empty string if no result found.
  */
 function extractResult(response) {
   if (response.data) {
@@ -26,9 +36,9 @@ function extractResult(response) {
  * Expect a http request to return given http status code.
  * Log response body and headers otherwise.
  *
- * @param {object} response - The response of the request.
+ * @param {GenericResponse} response - The response of the request.
  * @param {number} expectedHttpStatusCode - The expected http status code.
- * @returns {{message: Function, pass: boolean}} The expect result according to jest.
+ * @returns {{ pass: boolean, message: () => string }} The expect result according to jest.
  * @see {@link https://jestjs.io/docs/expect#expectextendmatchers}
  */
 function toReturnHttpCode(response, expectedHttpStatusCode) {
@@ -51,10 +61,10 @@ function toReturnHttpCode(response, expectedHttpStatusCode) {
  * Expect a http request to return the given http header.
  * Log response body and headers otherwise.
  *
- * @param {object} response - The response of the request.
+ * @param {GenericResponse} response - The response of the request.
  * @param {string} headerField - The expected http header field.
  * @param {string} headerValue - The expected http header value.
- * @returns {{message: Function, pass: boolean}} The expect result according to jest.
+ * @returns {{ pass: boolean, message: () => string }} The expect result according to jest.
  * @see {@link https://jestjs.io/docs/expect#expectextendmatchers}
  */
 function toReturnHttpHeader(response, headerField, headerValue) {
