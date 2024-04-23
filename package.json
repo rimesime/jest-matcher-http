@@ -54,5 +54,10 @@
   },
   "dependencies": {
     "@jest/globals": "^29.5.0"
+  },
+  "overrides": {
+    "superagent": {
+      "formidable": "^3.2.4"
+    }
   }
 }
