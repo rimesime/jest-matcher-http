@@ -2,7 +2,7 @@
 
 /**
  * @typedef {object} GenericResponse
- * @property {{ [key: string]: any }} headers - The headers of the response.
+ * @property {Record<string, unknown>} headers - The headers of the response.
  * @property {object} [data] - The data of the response.
  * @property {string} [text] - The text of the response.
  * @property {object} [body] - The body of the response.

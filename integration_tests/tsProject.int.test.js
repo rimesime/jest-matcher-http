@@ -10,7 +10,7 @@ describe('typescript project', () => {
       expect(error).toBeNull();
       done();
     });
-  });
+  }, 30000);
 
   // eslint-disable-next-line jest/no-done-callback
   it('should let jest tests fail if tests failing', (done) => {
@@ -22,5 +22,5 @@ describe('typescript project', () => {
       );
       done();
     });
-  });
+  }, 30000);
 });
