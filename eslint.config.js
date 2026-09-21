@@ -6,6 +6,7 @@ const jestPlugin = require('eslint-plugin-jest');
 const jsdocPlugin = require('eslint-plugin-jsdoc');
 
 module.exports = [
+  { ignores: ['.agents/**', '.codex/**'] },
   js.configs.recommended,
   jsdocPlugin.configs['flat/recommended'],
   {
