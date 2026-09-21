@@ -1,0 +1,1 @@
+../../../wims/claude-integration/agents/issue-implementer.md
