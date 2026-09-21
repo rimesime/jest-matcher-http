@@ -1,0 +1,1 @@
+../../../ai-config/agents/pre-commit-fixer.md
