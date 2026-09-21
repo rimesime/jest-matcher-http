@@ -1,1 +1,6 @@
+
+# ADR-002: validate the shared Claude configuration of this repository
+if [ -f ../ai-config/scripts/validate-claude-config.mts ]; then
+  node ../ai-config/scripts/validate-claude-config.mts --repo jest-matcher-http || exit 1
+fi
 npm run lint && npm test
