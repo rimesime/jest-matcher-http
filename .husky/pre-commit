@@ -1,6 +1,9 @@
 
-# ADR-002: validate the shared Claude configuration of this repository
-if [ -f ../ai-config/scripts/validate-claude-config.mts ]; then
+# ADR-002: validate the shared Claude configuration of this repository.
+# This is internal to the LiquidoLabs workspace: it needs a sibling `../ai-config` checkout that
+# does not exist for anyone who clones this published package on its own (contributors, CI). The
+# guard below keeps this step a no-op for them, so it never blocks their commits.
+if [ -f ../ai-config/scripts/validate-claude-config.mts ] && command -v node >/dev/null 2>&1; then
   node ../ai-config/scripts/validate-claude-config.mts --repo jest-matcher-http || exit 1
 fi
 npm run lint && npm test
