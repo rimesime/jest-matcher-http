@@ -152,7 +152,6 @@
     "grafana",
     "homeassistant",
     "linear",
-    "notion",
     "postgres-local-default",
     "postgres-local-wims",
     "sequential-thinking"
