@@ -5,6 +5,7 @@
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
+      "Agent",
       "Bash(awk:*)",
       "Bash(cat:*)",
       "Bash(cd:*)",
@@ -94,7 +95,6 @@
       "Skill(doc-coauthoring)",
       "Skill(global-standards)",
       "Skill(issue)",
-      "Skill(likec4-expert)",
       "Skill(openapi-docs)",
       "Skill(performance)",
       "Skill(plan)",
