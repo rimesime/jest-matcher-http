@@ -48,7 +48,6 @@
       "Bash(npm run bootstrap:*)",
       "Bash(npm run deploy:*)",
       "Bash(npm run lint:*)",
-      "Bash(npm run mcp:generate:*)",
       "Bash(npm run prepare:*)",
       "Bash(npm run test:e2e:*)",
       "Bash(npm run test:integration:*)",
@@ -93,6 +92,7 @@
       "Skill(code-review)",
       "Skill(commit)",
       "Skill(dependency-safety)",
+      "Skill(dependency-security)",
       "Skill(doc-coauthoring)",
       "Skill(global-standards)",
       "Skill(issue)",
@@ -147,22 +147,13 @@
     "mcp-docs-server",
     "wims-mcp-server"
   ],
-  "disabledMcpjsonServers": [
-    "chrome-devtools",
-    "grafana",
-    "homeassistant",
-    "linear",
-    "postgres-local-default",
-    "postgres-local-wims",
-    "sequential-thinking"
-  ],
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
-    "dart-lsp@wims-plugins": true,
-    "bash-lsp@wims-plugins": true
+    "dart-lsp@ai-config-plugins": true,
+    "bash-lsp@ai-config-plugins": true
   },
   "extraKnownMarketplaces": {
-    "wims-plugins": {
+    "ai-config-plugins": {
       "source": {
         "source": "directory",
         "path": ".claude/plugins"

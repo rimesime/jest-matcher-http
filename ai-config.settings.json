@@ -1,4 +1,12 @@
 {
+  "setup": {
+    "integrations": [
+      "wims"
+    ],
+    "areas": [
+      "node-ts"
+    ]
+  },
   "claude": {
     "permissions": {
       "allow": [
