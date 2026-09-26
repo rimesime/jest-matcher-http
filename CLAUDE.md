@@ -85,5 +85,5 @@ jest-matcher-http/
 ## WIMS workflow
 
 Issue work in this repository follows the WIMS laws: load the `wims` skill before touching issues,
-work items, commits or tests, and read its `references/laws.md`. Verification claims need actual
-evidence (universal Law 25), and calls to the WIMS MCP server are batched.
+work items, commits or tests, and read `.claude/skills/wims/references/laws.md`. Verification
+claims need actual evidence (universal Law 25), and calls to the WIMS MCP server are batched.
