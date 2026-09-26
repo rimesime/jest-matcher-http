@@ -1,0 +1,9 @@
+{
+  "claude": {
+    "permissions": {
+      "allow": [
+        "Bash(npm publish:*)"
+      ]
+    }
+  }
+}
