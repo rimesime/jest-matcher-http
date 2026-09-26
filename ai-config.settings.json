@@ -4,6 +4,7 @@
       "wims"
     ],
     "areas": [
+      "baseline",
       "node-ts"
     ]
   },
