@@ -1,1 +1,1 @@
-../../../ai-config/agents/pre-commit-fixer.md
+../../../wims/claude-integration/agents/pre-commit-fixer.md
