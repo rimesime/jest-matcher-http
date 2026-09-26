@@ -3,7 +3,7 @@
 # This is internal to the LiquidoLabs workspace: it needs a sibling `../ai-config` checkout that
 # does not exist for anyone who clones this published package on its own (contributors, CI). The
 # guard below keeps this step a no-op for them, so it never blocks their commits.
-if [ -f ../ai-config/scripts/validate-claude-config.mts ] && command -v node >/dev/null 2>&1; then
-  node ../ai-config/scripts/validate-claude-config.mts --repo jest-matcher-http || exit 1
+if [ -f ../ai-config/package.json ] && command -v npm >/dev/null 2>&1; then
+  npm --prefix ../ai-config run --silent validate -- --repo jest-matcher-http || exit 1
 fi
 npm run lint && npm test
