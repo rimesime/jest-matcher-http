@@ -1,1 +1,0 @@
-../../../ai-config/agents/documentation-maintainer.md

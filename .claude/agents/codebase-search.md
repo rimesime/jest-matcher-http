@@ -1,1 +1,0 @@
-../../../ai-config/agents/codebase-search.md
