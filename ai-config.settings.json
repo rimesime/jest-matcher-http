@@ -7,12 +7,5 @@
       "baseline",
       "node-ts"
     ]
-  },
-  "claude": {
-    "permissions": {
-      "allow": [
-        "Bash(npm publish:*)"
-      ]
-    }
   }
 }

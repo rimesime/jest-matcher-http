@@ -45,7 +45,6 @@
       "Bash(npm ls:*)",
       "Bash(npm outdated)",
       "Bash(npm outdated:*)",
-      "Bash(npm publish:*)",
       "Bash(npm run bootstrap:*)",
       "Bash(npm run deploy:*)",
       "Bash(npm run lint:*)",
