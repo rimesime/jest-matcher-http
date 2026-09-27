@@ -1,0 +1,1 @@
+../../../wims/claude-integration/agents/pre-commit-fixer.md

@@ -5,4 +5,5 @@ settings.json
 /.codex/
 /AGENTS.md
 /.mcp.json
-/.claude/
+.claude/settings.local.json
+.claude/settings.json

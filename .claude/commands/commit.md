@@ -1,0 +1,1 @@
+../../../wims/claude-integration/commands/commit.md
