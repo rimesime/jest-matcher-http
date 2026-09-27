@@ -1,1 +1,0 @@
-../../../wims/claude-integration/commands/issue.md

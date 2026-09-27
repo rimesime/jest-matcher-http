@@ -1,1 +1,0 @@
-../../../wims/claude-integration/commands/work.md
