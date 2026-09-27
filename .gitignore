@@ -1,9 +1,8 @@
 node_modules
 build
 settings.json
-.claude/settings.local.json
-!.claude/settings.json
 /.agents/
 /.codex/
 /AGENTS.md
 /.mcp.json
+/.claude/

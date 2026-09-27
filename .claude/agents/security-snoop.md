@@ -1,1 +1,0 @@
-../../../wims/claude-integration/agents/security-snoop.md

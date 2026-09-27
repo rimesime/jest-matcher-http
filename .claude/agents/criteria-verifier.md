@@ -1,1 +1,0 @@
-../../../wims/claude-integration/agents/criteria-verifier.md
