@@ -6,6 +6,7 @@
     "areas": [
       "baseline",
       "node-ts"
-    ]
+    ],
+    "rules": "AI-RULES.md"
   }
 }
