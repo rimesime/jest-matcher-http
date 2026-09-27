@@ -27,7 +27,7 @@
 - Symlinks: `.claude`, `.mcp.json`, `docs/general`
 - Config files: `CLAUDE.local.md`, `.prettierrc`, `.commitlintrc.cjs`
 - Git hooks: `.husky/commit-msg`
-- Documentation: `docs/PROGRESS_REPORT.md`, `docs/agent-memory/`
+- Documentation: `docs/agent-memory/`
 
 ### ESLint Migration (v8 → v9)
 - Flat config format (`eslint.config.js` replaces `.eslintrc.js`)
