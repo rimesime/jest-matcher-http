@@ -38,8 +38,7 @@ jest-matcher-http/
 ├── integration_tests/      # Integration tests with HTTP clients
 ├── build/                  # Build output (coverage)
 ├── docs/                   # Documentation
-│   ├── general             # Symlink to shared docs
-│   └── agent-memory/       # Agent learning files
+│   └── general             # Symlink to shared docs
 ├── .husky/                 # Git hooks
 └── package.json
 ```
@@ -55,6 +54,8 @@ jest-matcher-http/
 
 - **Testing**: Use Jest for this project (exception to Vitest requirement in TRQ-001)
 - **Build**: No build step required for pure JS library
+- **Git Workflow**: Changes reach `main` only through a branch and pull request; never push to
+  `main` directly, since every push to `main` publishes to npm
 
 ## Testing Context
 
