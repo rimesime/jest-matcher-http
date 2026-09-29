@@ -1,6 +1,7 @@
 node_modules
 build
 settings.json
+!/.ai-config/settings.json
 /.agents/
 /.codex/
 /AGENTS.md
