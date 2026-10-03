@@ -1,6 +1,6 @@
 {
-  "setup": {
-    "integrations": [
+  "use": {
+    "sources": [
       "wims"
     ],
     "areas": [
