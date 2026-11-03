@@ -5,10 +5,16 @@
 (
   if [ -n "${AI_CONFIG_WORKSPACE_PULL:-}" ]; then
     :
-  elif [ -f ../ai-config/package.json ]; then
-    npm --prefix ../ai-config run --silent git:hook -- post-commit "$PWD" "$@" || true
+  elif ! common_dir=$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null) || [ -z "$common_dir" ]; then
+    echo "ai-config: cannot resolve the git common dir, so this repository's shared AI setup is not kept current." >&2
   else
-    echo "ai-config: ../ai-config is missing, so this repository's shared AI setup is not kept current. Clone ai-config next to it (see its README)." >&2
+    main_checkout=$(dirname "$common_dir")
+    ai_config_dir="$(dirname "$main_checkout")/ai-config"
+    if [ -f "$ai_config_dir/package.json" ]; then
+      npm --prefix "$ai_config_dir" run --silent git:hook -- post-commit "$PWD" "$@" || true
+    else
+      echo "ai-config: $ai_config_dir is missing, so this repository's shared AI setup is not kept current. Clone ai-config next to the main checkout (see its README)." >&2
+    fi
   fi
 ) </dev/null || true
 # <<< ai-config
